@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <a class="navbar-brand" routerLink="/">Garden Shop</a>
+  <button (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a  [routerLink]="'/Carrito'"  class="nav-link" >
+
+          Carrito
+        </a>
+      </li>
+      
+ 
+      
+
+      <li ngbDropdown class="nav-item dropdown">
+        <a ngbDropdownToggle
+        class="nav-link dropdown-toggle" 
+       id="dropdown01"
+         data-toggle="dropdown" 
+         aria-haspopup="true" aria-expanded="false">Username</a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" routerLink="MisOrdenes">Mis Ordenes</a>
+          <a class="dropdown-item" routerLink="/admin/ordenes">Administrar Ordenes</a>
+          <a class="dropdown-item" routerLink="/admin/productos">Administrar Productos</a>
+          <a class="dropdown-item" >Salir</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+   
+      <input class="form-control mr-sm-2 input-lg" 
+      
+        style="width:500px;"
+       type="text" placeholder="Buscar productos" aria-label="Search">
+      <button 
+       class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+
+
+    </form>
+  </div>
+</nav>
